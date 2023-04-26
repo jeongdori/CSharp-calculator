@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace calculator
 {
-    internal class testClass
+    internal class Operator
     {
 
         //필드
@@ -17,42 +17,39 @@ namespace calculator
         char divide;
 
         //생성자
-        public testClass() { }
+        public Operator() { }
 
 
         // 속성
 
         //클리어
-        public void clear_fn()
+        public void Clear()
         {
             memory_num = 0;
             oper_ON = true;
         }
 
         // 연산클릭 -> 
-        public void oper_fn(Button btn, Label display)
+        public void Operations(Button btn, Label display)
         {
             double num = Convert.ToDouble(display.Text);
-            if (oper == '0')
+            if (oper == '0' && oper_ON ==false)
             {
                 memory_num = num;
                 display.Text = Convert.ToString(memory_num);
                 oper_ON = true;
+
             }
-            else if (oper_ON == true)
+            else if(oper_ON == false)
             {
-                
-            }
-            else
-            {
-                result_fn(display);
+                EqualsSign(display);
                 oper_ON = true;
             }
             oper = Convert.ToChar(btn.Text); 
         }
 
         // 숫자 클릭 -> 현재 클릭한 숫자 보이기
-        public void num_fn(Label display, Button btn)
+        public void btnNum(Label display, Button btn)
         {
             if (oper_ON == true)
             {
@@ -68,7 +65,7 @@ namespace calculator
 
         // 연산기능
         // enum?
-        public void result_fn(Label display)
+        public void EqualsSign(Label display)
         {
             double num = Convert.ToDouble(display.Text);
             switch (oper)

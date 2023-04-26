@@ -6,7 +6,7 @@ namespace calculator
     public partial class Form1 : Form
     {
 
-        testClass tc = new testClass();
+        Operator Oper_Con = new Operator();
 
         public Form1()
         {
@@ -18,19 +18,19 @@ namespace calculator
         private void clear_button(object sender, EventArgs e)
         {
             display.Text = "0";
-            tc.clear_fn();
+            Oper_Con.Clear();
         }
         // 사칙연산
-        private void cal_button(object sender, EventArgs e)
+        private void OperationsButton(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            tc.oper_fn(btn, display);
+            Oper_Con.Operations(btn, display);
         }
 
         // 결과
-        private void result_button(object sender, EventArgs e)
+        private void EqualsSignButton(object sender, EventArgs e)
         {
-            tc.result_fn(display);
+            Oper_Con.EqualsSign(display);
         }
 
         // 숫자클릭
@@ -39,8 +39,8 @@ namespace calculator
             Button btn = sender as Button;
 
             string strNumber = btn.Text;
-            
-            tc.num_fn(display, btn);
+
+            Oper_Con.btnNum(display, btn);
         }
 
 

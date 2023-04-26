@@ -104,7 +104,7 @@
             subtract.TabIndex = 15;
             subtract.Text = "-";
             subtract.UseVisualStyleBackColor = false;
-            subtract.Click += cal_button;
+            subtract.Click += OperationsButton;
             // 
             // button15
             // 
@@ -152,7 +152,7 @@
             add.TabIndex = 11;
             add.Text = "+";
             add.UseVisualStyleBackColor = false;
-            add.Click += cal_button;
+            add.Click += OperationsButton;
             // 
             // three
             // 
@@ -200,7 +200,7 @@
             multiply.TabIndex = 7;
             multiply.Text = "x";
             multiply.UseVisualStyleBackColor = false;
-            multiply.Click += cal_button;
+            multiply.Click += OperationsButton;
             // 
             // six
             // 
@@ -248,7 +248,7 @@
             divide.TabIndex = 3;
             divide.Text = "÷";
             divide.UseVisualStyleBackColor = false;
-            divide.Click += cal_button;
+            divide.Click += OperationsButton;
             // 
             // nine
             // 
@@ -297,7 +297,7 @@
             result.TabIndex = 3;
             result.Text = "=";
             result.UseVisualStyleBackColor = false;
-            result.Click += result_button;
+            result.Click += EqualsSignButton;
             // 
             // Form1
             // 
